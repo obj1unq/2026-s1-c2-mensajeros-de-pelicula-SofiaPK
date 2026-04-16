@@ -1,6 +1,5 @@
 object paquete {
 	var estáPago = false // el estado del paquete puede variar y no estar pago
-	var destino = puenteDeBrooklyn
 	
 	// getter
 	method estáPago() {
@@ -12,17 +11,7 @@ object paquete {
 		estáPago = _estáPago
 	}
 
-	// getter
-	method destino() {
-		return destino
-	}
-
-	// setter
-	method destino(_destino) {
-		destino = _destino
-	}
-
-	method puedeSerEntregado(persona) {
+	method puedeSerEntregado(destino, persona) {
 		return self.estáPago() && destino.dejarPasar(persona)
 	}
 }
